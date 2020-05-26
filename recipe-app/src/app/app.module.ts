@@ -10,6 +10,9 @@ import { RecipeDetailComponent } from './recipes/recipe-detail/recipe-detail.com
 import { RecipeItemComponent } from './recipes/recipes-list/recipe-item/recipe-item.component';
 import { ShoppingListComponent } from './shopping-list/shopping-list.component';
 import { ShoppingEditComponent } from './shopping-list/shopping-edit/shopping-edit.component';
+import { BasicHighlightDirective } from './directive/basic-highlight.directive';
+import { BetterHighlightDirective } from './directive/better-highlight.directive';
+import { DropdownToggleDirective } from './directive/dropdown-toggle.directive';
 
 @NgModule({
   declarations: [
@@ -20,7 +23,10 @@ import { ShoppingEditComponent } from './shopping-list/shopping-edit/shopping-ed
     RecipeDetailComponent,
     RecipeItemComponent,
     ShoppingListComponent,
-    ShoppingEditComponent
+    ShoppingEditComponent,
+    BasicHighlightDirective,
+    BetterHighlightDirective,
+    DropdownToggleDirective
   ],
   imports: [
     BrowserModule,
