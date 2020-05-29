@@ -13,6 +13,9 @@ import { ShoppingEditComponent } from './shopping-list/shopping-edit/shopping-ed
 import { BasicHighlightDirective } from './directive/basic-highlight.directive';
 import { BetterHighlightDirective } from './directive/better-highlight.directive';
 import { DropdownToggleDirective } from './directive/dropdown-toggle.directive';
+import { AppRouterModule } from './app-router.module';
+import { RecipeSelectComponent } from './recipes/recipe-select.component';
+import { RecipesNewComponent } from './recipes/recipes-new/recipes-new.component';
 
 @NgModule({
   declarations: [
@@ -26,11 +29,14 @@ import { DropdownToggleDirective } from './directive/dropdown-toggle.directive';
     ShoppingEditComponent,
     BasicHighlightDirective,
     BetterHighlightDirective,
-    DropdownToggleDirective
+    DropdownToggleDirective,
+    RecipeSelectComponent,
+    RecipesNewComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    AppRouterModule
     
   ],
   providers: [],
