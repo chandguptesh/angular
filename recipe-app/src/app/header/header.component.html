@@ -8,15 +8,19 @@
          <ul class="nav navbar-nav">
             <!-- <li> <a href="#" (click)="onFeatureClick('recipe')">Recipes</a></li>
             <li> <a href="#"(click)="onFeatureClick('shoppinglist')">Shopping List</a></li> -->
-            <li routerLinkActive='active'> <a [routerLink]= "['/recipes']">Recipes</a></li>
+            <li routerLinkActive='active'> <a [routerLink]= "['/recipes']" *ngIf="isAuthenticated">Recipes</a></li>
             <li routerLinkActive='active'> <a [routerLink]= "['/shoppinglist']">Shopping List</a></li>
+            <li routerLinkActive='active'> <a [routerLink]= "['/auth']" *ngIf="!isAuthenticated">Authenticate</a></li>
          </ul>
          <ul class="nav navbar-nav navbar-right">
-            <li class="dropdown" appDropdownToggle>
+            <li>
+               <a style="cursor:pointer;" *ngIf="isAuthenticated" (click)= "onLogOut()">LogOut</a>
+            </li>
+            <li class="dropdown" appDropdownToggle *ngIf="isAuthenticated">
                <a style="cursor:pointer;" class="dropdown-toggle" role="button">Manage <span class="caret"></span></a>
                <ul class="dropdown-menu">
-                  <li><a style="cursor:pointer;">Save</a></li>
-                  <li><a style="cursor:pointer;">Fetch</a></li>
+                  <li><a style="cursor:pointer;" (click)="onSave()">Save</a></li>
+                  <li><a style="cursor:pointer;" (click)= "onFetch()">Fetch</a></li>
 
                </ul>
             </li>
